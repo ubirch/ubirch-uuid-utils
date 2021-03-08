@@ -21,7 +21,7 @@
 
 
     <groupId>com.ubirch.util</groupId>
-    <artifactId>ubirch-uuid-utils_${scala.major.version}</artifactId>
+    <artifactId>ubirch-uuid-utils_${scala.compat.version}</artifactId>
     <version>0.1.5-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -71,12 +71,11 @@
         <timestamp>${maven.build.timestamp}</timestamp>
         <maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format>
 
-        <scala.major.version>2.11</scala.major.version>
-        <scala.version>2.11.12</scala.version>
-        <scala.compat.version>2.11</scala.compat.version>
+        <scala.version>2.12.8</scala.version>
+        <scala.compat.version>2.12</scala.compat.version>
         <scalatest.version>3.0.5</scalatest.version>
 
-        <scala-uuid.version>0.2.3</scala-uuid.version>
+        <scala-uuid.version>0.3.1</scala-uuid.version>
         <commons-codec.version>1.11</commons-codec.version>
 
         <!-- plugins -->

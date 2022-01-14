@@ -1,18 +1,19 @@
 package com.ubirch.util.uuid
 
 import org.apache.commons.codec.binary.Hex
-import org.scalatest.{FeatureSpec, Matchers}
+import org.scalatest.featurespec.AnyFeatureSpec
+import org.scalatest.matchers.should.Matchers
 
-class UUIDUtilSpec extends FeatureSpec
+class UUIDUtilSpec extends AnyFeatureSpec
   with Matchers {
 
-  feature("uuid util tests") {
+  Feature("uuid util tests") {
 
     val testUuid = "50e505c1-fbc6-580a-4d31-63f7c2a69e20"
 
     val rawTestUuid = Hex.decodeHex("50e505c1fbc6580a4d3163f7c2a69e20")
 
-    scenario("parse from String") {
+    Scenario("parse from String") {
       val u = UUIDUtil.fromString(testUuid)
 
       val uStr = u.toString
@@ -20,7 +21,7 @@ class UUIDUtilSpec extends FeatureSpec
       uStr shouldBe testUuid
     }
 
-    scenario("parse from Array") {
+    Scenario("parse from Array") {
       val u1 = UUIDUtil.fromByteArray(rawTestUuid)
 
       val uStr = u1.toString
@@ -28,13 +29,13 @@ class UUIDUtilSpec extends FeatureSpec
       uStr shouldBe testUuid
     }
 
-    scenario("parse from UUID to Array") {
+    Scenario("parse from UUID to Array") {
       val u1 = UUIDUtil.toByteArray(UUIDUtil.fromString(testUuid))
 
       u1 shouldBe rawTestUuid
     }
 
-    scenario("parse from Array/String") {
+    Scenario("parse from Array/String") {
       val u1 = UUIDUtil.fromByteArray(rawTestUuid)
 
       val u2 = UUIDUtil.fromString(testUuid)
@@ -42,7 +43,7 @@ class UUIDUtilSpec extends FeatureSpec
       u1 shouldBe u2
     }
 
-    scenario("parse created Uuid") {
+    Scenario("parse created Uuid") {
 
       val u = UUIDUtil.uuid
 
